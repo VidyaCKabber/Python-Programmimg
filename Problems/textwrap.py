@@ -31,6 +31,17 @@
 # IMNO
 # QRST
 # UVWX
+
+n = 4
+string1 = "ABCDEFGHIJKLIMNOQRSTUVWXYZ"
+min1 = 0
+res = []
+for chars in range(min1, len(string1), n):
+    res.append(string1[min1:chars])
+    min1 = chars
+    
+res = list(filter(None, res))
+print(res)
 # YZ
 
 import textwrap
