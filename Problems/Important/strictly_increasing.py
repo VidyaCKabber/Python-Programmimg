@@ -6,3 +6,25 @@
 # Input: nums = [1,2,10,5,7] Output: true
 # Input: nums = [2,3,1,2] Output: false
 # Input: nums = [1,1,1] Output: false
+
+
+nums =  [1, 2, 10, 5, 7]
+
+def check_strictly_increasing_list():
+    count = 0
+    n = len(nums)
+    for j in range(n-1):
+        if count <= 1:
+            if nums[j] >= nums[j+1]:
+                if nums[j+1] < nums[j-2]:
+                    return False
+                count +=1
+        else:
+            break
+    if count<=1:
+        return True
+    return False
+        
+        
+res = check_strictly_increasing_list()  
+print(res)
