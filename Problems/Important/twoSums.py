@@ -21,14 +21,27 @@
 
 
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+    # solution1
+    def twoSum1(self, nums: List[int], target: int) -> List[int]:
         for i in range(len(nums)-1):
             if (nums[i]+nums[i+1]) == target:
                 return [i, i+1]
         return []
 
+    #solution 2
+    def twoSum2(self, nums: List[int], target: int) -> List[int]:
+    n = len(nums)
+    for i in range(n):
+        for j in range(i+1, n):
+            if (nums[i]+nums[j]) == target:
+                return [i, j]
+    return []
+
 nums = input()
 target = input()
 a = Solution()
-res = a.twoSum(nums, target)
+res = a.twoSum1(nums, target)
+print(res)
+
+res = a.twoSum2(nums, target)
 print(res)
