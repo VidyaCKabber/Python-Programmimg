@@ -37,6 +37,22 @@ class Solution:
                 return [i, j]
     return []
 
+# optimised final one
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        for i, num in enumerate(nums):
+            complement = target - num
+            if(complement == num):
+                if nums.count(num) > 1:
+                    temp_arr = nums.copy()
+                    temp_arr.reverse()
+                    last_index_in_reversed = temp_arr.index(complement)
+                    last_index = len(temp_arr) - 1 - last_index_in_reversed
+                    return [i, last_index]
+            elif complement in nums:
+                return [i, nums.index(complement)]
+        return []
+        
 nums = input()
 target = input()
 a = Solution()
