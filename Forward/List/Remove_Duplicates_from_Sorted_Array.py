@@ -24,9 +24,10 @@ from collections import OrderedDict
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         temp = list(OrderedDict.fromkeys(nums))
+
+        count = 0
         for i in range(len(temp)):
             nums[i] = temp[i]
+            count += 1
 
-        for i in nums[len(temp):]:
-            nums.remove(i)
-        return len(nums)
+        return count
