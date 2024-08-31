@@ -56,6 +56,13 @@ class LinkedList(object):
                 this_node = this_node.get_next()
             print(this_node)
         return None
+
+    def print_all(self):
+        this_node = self.root
+        
+        while this_node:
+            print(this_node.get_data(), end=" -> ")
+            this_node = this_node.get_next()
                 
 ll = LinkedList()
 ll.add(5)
