@@ -27,43 +27,31 @@ arr = [1, 9, 8, 5, 10]
 res = merge_sort(arr)
 print(res)
 
-Here’s a step-by-step explanation of Merge Sort using the array [1, 8, 9, 10, 5], presented in a table.
-
-Initial Array: [1, 8, 9, 10, 5]
-Step-by-Step Table for Merge Sort:
-Step	Action	Array	Left Half	Right Half	Merged Result
-Step 1	Initial split into two halves	[1, 8, 9, 10, 5]	[1, 8]	[9, 10, 5]	
-Step 2	Recursively split [1, 8]	[1, 8]	[1]	[8]	
-Step 3	Merge [1] and [8]				[1, 8]
-Step 4	Recursively split [9, 10, 5]	[9, 10, 5]	[9]	[10, 5]	
-Step 5	Recursively split [10, 5]	[10, 5]	[10]	[5]	
-Step 6	Merge [10] and [5]				[5, 10]
-Step 7	Merge [9] and [5, 10]				[5, 9, 10]
-Step 8	Merge [1, 8] and [5, 9, 10]				[1, 5, 8, 9, 10]
-Detailed Explanation of Each Step:
-Step 1: The array [1, 8, 9, 10, 5] is split into two halves: [1, 8] and [9, 10, 5].
-
-Step 2: The left half [1, 8] is split into [1] and [8].
-
-Step 3: [1] and [8] are already sorted (since they contain only one element each). We merge them to get [1, 8].
-
-Step 4: The right half [9, 10, 5] is split into [9] and [10, 5].
-
-Step 5: The subarray [10, 5] is split into [10] and [5].
-
-Step 6: Merge [10] and [5]. Since 5 is smaller than 10, the merged result is [5, 10].
-
-Step 7: Merge [9] and [5, 10]. We compare elements:
-
-5 is smaller than 9, so 5 goes first.
-9 is smaller than 10, so 9 goes next.
-10 is added last. The merged result is [5, 9, 10].
-Step 8: Finally, merge [1, 8] and [5, 9, 10]. Compare elements:
-
-1 is smaller than 5, so 1 goes first.
-5 is smaller than 8, so 5 goes next.
-8 is smaller than 9, so 8 goes next.
-9 and 10 are added in order. The final sorted array is [1, 5, 8, 9, 10].
-Final Sorted Array: [1, 5, 8, 9, 10]
-
-            
+Iteration	Call Stack (Top to Bottom)
+1	merge_sort([1, 8, 10, 2, 4, 0])
+2	merge_sort([1, 8, 10])
+3	merge_sort([1])
+4	(pop merge_sort([1]))
+5	merge_sort([8, 10])
+6	merge_sort([8])
+7	(pop merge_sort([8]))
+8	merge_sort([10])
+9	(pop merge_sort([10]))
+10	merge([8], [10])
+11	(pop merge([8], [10]))
+12	merge([1], [8, 10])
+13	(pop merge([1], [8, 10]))
+14	merge_sort([2, 4, 0])
+15	merge_sort([2])
+16	(pop merge_sort([2]))
+17	merge_sort([4, 0])
+18	merge_sort([4])
+19	(pop merge_sort([4]))
+20	merge_sort([0])
+21	(pop merge_sort([0]))
+22	merge([4], [0])
+23	(pop merge([4], [0]))
+24	merge([2], [0, 4])
+25	(pop merge([2], [0, 4]))
+26	merge([1, 8, 10], [0, 2, 4])
+27	(pop merge([1, 8, 10], [0, 2, 4])
