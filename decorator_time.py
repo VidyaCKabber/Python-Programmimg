@@ -6,7 +6,7 @@ def decorator(func):
         print(f"Start time {str_time}")
         func()
         end_time = time.time()
-        print(f"Start time {end_time}")
+        print(f"End time {end_time}")
         
         time_taken = end_time - str_time
         return time_taken
