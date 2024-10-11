@@ -25,7 +25,7 @@ class Animal2():
 
     def __init__(self):
         pass
-    def sound(self):
+    def sound():
          return "ad!"
 
 print(Animal2.sound())  # TypeError: Animal2.sound() missing 1 required positional argument: 'self'
