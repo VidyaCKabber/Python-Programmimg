@@ -11,3 +11,14 @@ if rem_val_count > 0:
 else:
     print("val not found")
 print(arr)
+
+
+#solution 2
+
+arr = [1, 2, 32, 1, 3, 23, 4, 4, 4, 4, 2, 1, 23, 5]
+rem_val = 23
+
+# Remove all occurrences of rem_val
+arr = [x for x in arr if x != rem_val]
+
+print(arr)
