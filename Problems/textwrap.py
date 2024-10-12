@@ -54,6 +54,15 @@ def wrap(string, max_width):
         final_paragraph += sub_string+"\n"
     return final_paragraph
 
+# solution 2
+k = 4
+prev = 0
+
+for i in range(1, len(a)//k):
+    s = a[prev: k*i]
+    print(s)
+    prev = k*i
+
 if __name__ == '__main__':
     string, max_width = input(), int(input())
     result = wrap(string, max_width)
