@@ -11,21 +11,31 @@
 # Input: nums = [1,0,1,1,0,1]
 # Output: 2
 
-class Solution:
-    def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
+nums = [1, 0, 1, 1, 0, 1]
 
-        count = max_counter = 0
-
-        for num in nums:
-            if num == 1:
-                count += 1
-                if count > max_counter:
-                    max_counter += 1
-            else:
-                count = 0
-
-        return max_counter
-
-nums = [1,1,0,1,1,1]
-obj = Solution()
-print(obj.findMaxConsecutiveOnes(nums))
+def a():
+    if not nums:
+        return False
+        
+    count = max_count = 0
+    start = end = -1
+    temp_start = -1
+    
+    for i, num in enumerate(nums):
+        if num == 1: 
+            if temp_start == -1:
+                temp_start = i  # Mark the start of the sequence
+            
+            count += 1
+            
+            if count > max_count:
+                max_count = count
+                start = temp_start  # Update start only when max_count is updated
+                end = i  # Current index is the end of the sequence
+        else:
+            count = 0  # Reset count when encountering a 0
+            temp_start = -1  # Reset temp_start for next sequence of 1's
+    
+    return max_count, start, end
+    
+print(a())
