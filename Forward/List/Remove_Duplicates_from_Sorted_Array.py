@@ -25,12 +25,7 @@ class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         temp = list(OrderedDict.fromkeys(nums))
 
-        count = 0
-        for i in range(len(temp)):
-            nums[i] = temp[i]
-            count += 1
-
-        return count
+        return temp
 
 # other solution
 
@@ -53,3 +48,22 @@ def remove_duplicates(lst):
 nums_no_duplicates = remove_duplicates(nums)
 
 print(nums_no_duplicates)
+
+# solution 2
+
+def remove_duplicates(nums):
+    seen = set()
+    result = []
+    
+    for num in nums:
+        if num not in seen:
+            seen.add(num)
+            result.append(num)
+    
+    return result
+
+# Example usage
+nums = [1, 2, 3, 1, 2, 4, 5, 6, 3]
+unique_nums = remove_duplicates(nums)
+print(unique_nums)  # Output: [1, 2, 3, 4, 5, 6]
+
