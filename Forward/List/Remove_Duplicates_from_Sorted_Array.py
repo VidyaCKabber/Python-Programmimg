@@ -35,3 +35,21 @@ class Solution:
 # other solution
 
 print(frozenset(nums))
+
+
+# other solution
+
+nums = [1, 2, 3, 1, 2, 4, 5, 6, 3]
+
+def remove_duplicates(lst):
+    
+    for i in range(len(lst)-1, -1, -1):
+        
+        if lst[i] in lst[:i]:
+            lst.pop(i)
+            
+    return lst
+# Remove duplicates while preserving order
+nums_no_duplicates = remove_duplicates(nums)
+
+print(nums_no_duplicates)
