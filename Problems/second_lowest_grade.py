@@ -46,3 +46,25 @@
 # python students = [['Harry', 37.21], ['Berry', 37.21], ['Tina', 37.2], ['Akriti', 41], ['Harsh', 39]]
 
 # The lowest grade of  belongs to Tina. The second lowest grade of  belongs to both Harry and Berry, so we order their names alphabetically and print each name on a new line.
+
+students = [['Harry', 371.61], ['Berry', 137.31], ['Tina', 38], ['Akriti', 41], ['Harsh', 39]]
+
+first_lowest = second_lowest = float('inf')
+
+sec_low_index = first_low_index = -1
+
+for index, student in enumerate(students):
+
+    if student[1] < first_lowest:
+        second_lowest = first_lowest
+        sec_low_index = first_low_index
+        
+        first_lowest = student[1]
+        first_low_index = index
+        
+    elif student[1] < second_lowest and student[1] != first_lowest:
+        second_lowest = student[1]
+        sec_low_index = index
+    
+print(second_lowest)
+print(students[sec_low_index][0])
