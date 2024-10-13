@@ -51,3 +51,21 @@ while i < len(speed):
 print(count)
         
     
+# solution 2
+
+n = 6
+speed = [5,7, 9, 12, 10, 13, 3, 1, 1, 10]
+minComps = 2
+speedThreshold = 15
+
+value = 0
+
+result = []
+
+for i, num in enumerate(speed):
+    value += num
+    if value  >= speedThreshold:
+        result.append(value)
+        value = 0
+        
+print(len(result))
